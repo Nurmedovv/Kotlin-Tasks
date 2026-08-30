@@ -1,0 +1,67 @@
+import java.util.*
+
+fun main(args: Array<String>) {
+    val scan = Scanner(System.`in`)
+    val temperature: Int = scan.nextLine().trim().toInt()
+
+    if (temperature > 85) {
+        println("High temperature")
+    } else if (temperature < 50) {
+        println("Low temperature")
+    } else {
+        println("Normal temperature")
+    }
+}
+
+______________________________________________________________________________________________________
+
+
+fun main() {
+
+    val a = readln().toInt()
+    val b = readln().toInt()
+    val c = readln().toInt()
+
+    println(
+        if (a > c) {
+            when {
+                b > a -> b 	\\ можно было менять 
+                else -> a	\\ только тут
+            }
+        } else {
+            when {
+                c > b -> c	\\ и
+                else -> b	\\ тут
+            }
+        }
+    )
+}
+______________________________________________________________________________________________________
+
+
+fun main() {
+
+    val a = readln().toInt()
+    val b = readln().toInt()
+    val c = readln().toInt()
+
+    println(
+        if (a > c) {
+            if (a > b) a else b 	\\ можно менять только тут
+        } else {
+            if (c > b) c else b		\\ и тут
+        }
+    )
+}
+
+________________________________________________________________________________________________________
+
+fun main() {
+    val numbers = Array(3) { readln().toInt() }.sortedDescending()
+    println(numbers[0])
+}
+
+
+
+
+

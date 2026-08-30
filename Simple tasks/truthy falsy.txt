@@ -1,0 +1,41 @@
+A boolean value is either true or false. Given an integer value, determine if it is 'truthy' or 'falsy' according to these rules: 0 is 'falsy', and any other value is 'truthy'. 
+Read an integer value from standard input and print 'true' if it is truthy, or 'false' if it is falsy.
+
+Sample Input 1:
+5
+Sample Output 1:
+true
+
+Sample Input 2:
+0
+Sample Output 2:
+false
+______________________________________________________________________________________________________________________________________________________________________________________
+
+import java.util.*
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    val value = scanner.nextInt()
+
+    if (value == 0){
+        print("false")
+    } else {
+        print("true")
+  }
+}
+______________________________________________________________________________________________________________________________________________________________________________________
+
+import java.util.*
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    val value = scanner.nextInt()
+    println(value != 0) // если 0 - true, в остальных случаях - false
+}
+
+______________________________________________________________________________________________________________________________________________________________________________________
+
+fun main() {
+    println(readln().toInt() != 0)
+}
