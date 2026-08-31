@@ -1,0 +1,10 @@
+Write a program that reads an integer N and prints the result of incrementing N by 1 and then decrementing the result by 2.
+
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    var n = scanner.nextInt()
+    
+    println((N + 1) - 2) 
+}

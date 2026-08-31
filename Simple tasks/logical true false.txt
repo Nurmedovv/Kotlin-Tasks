@@ -1,0 +1,51 @@
+Write a program that reads three boolean variables x, y, and z (each on a separate line) and then prints the result of the following logical expression: NOT(x AND y) OR (z).
+
+Sample Input 1:
+true
+true
+false
+Sample Output 1:
+false
+
+Sample Input 2:
+true
+false
+true
+Sample Output 2:
+true
+
+
+fun main() {
+    val x = readLine().toBoolean() 
+    val y = readLine().toBoolean() 
+    val z = readLine().toBoolean() 
+    
+    println(!(x && y) || z)
+}
+
+_____________________________________________________________________________________________________________________________________________________________________________________
+Mr. Groundhog is throwing a party. He’s known for his pragmatism, so only those who bring a gift will be allowed to attend the party. And, of course, a guest must have an invitation.
+Write a program that checks if a guest should be allowed at the party. The program should read two booleans, each on a separate line:
+One showing whether the guest has an invitation;
+Another indicating if the guest brought a gift.
+Print true if both conditions are met and false if not.
+
+Sample Input 1:
+true
+true
+Sample Output 1:
+true
+
+Sample Input 2:
+true
+false
+
+Sample Output 2:
+false
+
+fun main() {
+    val invitation = readLine().toBoolean() 
+    val gift = readLine().toBoolean()
+    val met = invitation && gift
+	println(met)    
+}
