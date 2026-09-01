@@ -15,7 +15,7 @@ All materials are organized by category and stored in plain text (`.txt`) format
 You can browse through the solutions directly here on GitHub, or clone the repository to your local machine:
 
 ```bash
-git clone https://github.com
+git clone https://github.com/Nurmedovv/Kotlin-Tasks
 ```
 
 ---
