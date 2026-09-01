@@ -1,0 +1,36 @@
+Write a function isVowel that:
+Takes a single Char.
+Returns true if it's a vowel (a, e, i, o, u — case-insensitive).
+Returns false otherwise.
+'y' is not a vowel.
+
+Example:
+isVowel('a') → true
+isVowel('A') → true
+isVowel('b') → false
+
+fun isVowel(a: Char): Boolean {
+    val vowel: String = "aeiouAEIOU"
+    if (a in vowel) {
+        return true
+    }
+    return false
+}
+
+fun main() {
+    val letter = readln().first()
+
+    println(isVowel(letter))
+}
+
+----------------------------------------------------------------------------
+
+fun isVowel(a: Char): Boolean = return a in "aeiouAEIOU"
+
+fun main() {
+    val letter = readln().first()
+
+    println(isVowel(letter))
+}
+
+_______________________________________________________________________________________________________________________________________________________________________________________________________

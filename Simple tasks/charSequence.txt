@@ -1,0 +1,69 @@
+Given a CharSequence (string).
+Return the number of unique (distinct) characters in it — i.e., how many different characters appear at least once.
+
+Example:
+"abacaba" → characters: a, b, c → result: 3
+
+fun countUniqueChars(sequence: CharSequence): Int {
+    return sequence.toSet().size
+}
+
+_______________________________________________________________________________________________________________________________________________________________________________________________
+Implement a function countVowels(charSequence: CharSequence) that takes a CharSequence as input and returns the number of vowels (a, e, i, o, u, y) in the sequence.
+
+Sample Input:
+hello world
+
+Sample Output:
+3
+
+fun countVowels(charSequence: CharSequence): Int {
+    val vowel: CharSequence = "aeiouy"
+    var count: Int = 0
+    for (ch in charSequence) {
+        if (vowel.contains(ch)) {
+            count++
+        }
+    }
+    return count
+}
+_________________________________________________________________________________________________________________________________________________________________________________________________
+Given a CharSequence (string).
+Return true if all characters are letters (alphabetic), otherwise return false.
+
+Example:
+"HelloWorld" → true
+"Hello_world" → false
+
+fun containsOnlyAlphabets(charSequence: CharSequence): Boolean {
+    for (ch in charSequence) {
+        if (ch !in 'A'..'Z' && ch !in 'a'..'z') {
+            return (false)
+        }
+    }
+    return true
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+fun containsOnlyAlphabets(charSequence: CharSequence): Boolean {
+    return charSequence.all { it.isLetter() }
+}
+
+___________________________________________________________________________________________________________________________________________________________________________________________________
+
+Given two strings: source and letters.
+Return true if all characters from letters appear in source in the same order (not necessarily consecutively).
+Return false otherwise.
+Case-sensitive.
+
+Examples:
+source = "example", letters = "amp" → true (order: a → m → p)
+source = "example", letters = "amx" → false (order breaks: x comes before m)
+source = "Hello world!", letters = "owod" → true
+
+fun containsLetters(source: CharSequence, letters: CharSequence): Boolean {
+    return source.filter{ letters.contains(it) }.contains(letters)
+}
+
+____________________________________________________________________________________________________________________________________________________________________________________________________
+
