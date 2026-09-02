@@ -1,0 +1,11 @@
+Дано целое число.
+Нужно вычислить его квадрат и квадратный корень и вывести в формате:
+"Square: X, Square root: Y".
+
+import kotlin.math.sqrt
+
+fun main(args: Array<String>) {
+    val input = readln().toInt()
+
+    println("Square: ${input * input}, Square root: ${sqrt(input.toDouble())}")
+}

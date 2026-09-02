@@ -1,0 +1,66 @@
+Write a program that reads four characters and prints the previous character in the Unicode table for each of them.
+Sample Input 1:
+b
+c
+d
+e
+
+Sample Output 1:
+a
+b
+c
+d
+
+
+fun main() = repeat(4) { println(readln().first() - 1) }
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+fun main() = Array(4) { readLine()!!.first() }.forEach { println(it - 1) }
+
+аналогично можно проверить символ (число или нет)
+
+fun main() = Array(4) { readLine()!!.first() }.forEach { println(it.isDigit()) }
+
+
+
+________________________________________________________________________________________________________________________________________________________________________________________________
+
+Write a program that reads one number and one character on separate lines and checks whether the entered number corresponds to the decimal representation of the character in the Unicode table.
+
+If the input character is represented by the input number, print true; otherwise, print false.
+
+Sample Input 1:
+97
+a
+
+Sample Output 1:
+true
+
+
+fun main() {
+    val num = readln().toInt()
+    val ch = readln().first()
+
+    println(num == ch.code) 
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+fun main() = println(readln().toInt() == readln().first().code)
+
+________________________________________________________________________________________________________________________________________________________________________________________________
+
+Программа читает один символ.
+Нужно вывести true, если это заглавная буква (любая, включая Unicode) или цифра от 1 до 9.
+Иначе — false
+
+fun main() {
+    val ch = readln().first()
+   if (ch.isUpperCase() || (ch.isDigit() && ch != '0')) {
+        print(true)
+    } else 
+        print(false)
+}
+
+
+
