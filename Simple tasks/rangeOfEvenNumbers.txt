@@ -1,0 +1,49 @@
+The program creates a list of all even numbers from 1 to 1000.
+Then it asks the user to enter an even number.
+
+If the entered number is in the list (i.e., it's an even number in range 1..1000), it prints:
+"Your numbers is in range"
+If the number is not in the list (e.g., odd, out of range), it prints:
+"Your number is not in range"
+If the input is not a valid integer, it prints:
+"Your input is incorrect".
+
+Examples:
+Input: 4 → Output: "Your numbers is in range"
+Input: 5 → Output: "Your number is not in range"
+Input: abc → Output: "Your input is incorrect"
+
+fun main() {
+    val evenNumbers = mutableListOf<Int>()
+    for (i in 1..1000) {
+        if (i % 2 == 0) {
+            evenNumbers.add(i)
+        }
+    }
+
+    try {
+        println("Enter some even number:")
+        val input = readln().toInt()
+        if (input in evenNumbers) {
+            println("Your numbers is in range")
+        } else {
+            println("Your number is not in range")
+        }
+    } catch (e: NumberFormatException) {
+        println("Your input is incorrect")
+    }
+
+}
+
+--------------------------------------------------------------------
+
+fun main() {
+    val range = 0..1000 step 2
+    println("Enter a number:")
+    val number = readln().toInt()
+    val result = number in range
+    println(result)
+}
+
+
+______________________________________________________________________________________________________________________________________________________________________________________________________
