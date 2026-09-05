@@ -1,0 +1,41 @@
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+	val scanner = Scanner(System.`in`)
+    val number = scanner.nextInt()
+    val left = scanner.nextInt()
+    val right = scanner.nextInt()
+    
+    val min = minOf(left, right)
+    val max = maxOf(left, right)
+    
+    println(number in min..max)
+} 
+
+_______________________________________________________________________________________________________________________________
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    
+    val number = scanner.nextInt()
+    val left = scanner.nextInt()
+    val right = scanner.nextInt()
+    
+
+    println(
+		when{
+            (left <= number && number <= right) || (right <= number && number <= left) -> "true"
+    	else -> "false"
+        }
+    )
+}
+
+__________________________________________________________________________________________________________________________________
+
+fun main() {
+    val x = readln().toInt()
+    val y = readln().toInt()
+    val z = readln().toInt()
+    println(x in y..z || x in z..y)
+}
