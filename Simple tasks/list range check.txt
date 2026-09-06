@@ -1,0 +1,1 @@
+fun main() = List(5) { readln().toInt() }.let { println(it[4] in it[0]..it[1] && it[4] in it[2]..it[3])}
