@@ -1,0 +1,3 @@
+import kotlin.math.pow
+
+fun main() = println(readln().toDouble().let {it.pow(3) + it.pow(2) + it + 1.0})

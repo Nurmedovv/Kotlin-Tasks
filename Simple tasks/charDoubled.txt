@@ -1,0 +1,30 @@
+Write a program that reads a string and then output another string with doubled characters.
+
+Sample Input:
+The
+Sample Output:
+TThhee
+
+fun main() {
+    val input = readln().toCharArray()
+    for (ch in input.indices) {
+        print(buildString {
+            append(input[ch])
+            append(input[ch])
+        })
+    }
+}
+
+-----------------------------------------------------------------------------------------------
+
+fun main() {
+    readln().forEach { print("$it$it") }
+}
+
+-----------------------------------------------------------------------------------------------
+
+fun main() {
+    for (i in readln()) print("$i$i")
+}
+
+_______________________________________________________________________________________________________________________________________________________________________________________________________

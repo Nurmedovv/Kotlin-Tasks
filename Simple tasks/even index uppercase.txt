@@ -1,0 +1,47 @@
+Implement a function that takes a String message as an argument. The method transforms all the letters having an even index to uppercase (index 0 is considered even) and returns the result.
+It's guaranteed that input strings will not be empty.
+Sample Input 1:
+I love big letters
+
+Sample Output 1:
+I LoVe bIg lEtTeRs
+
+
+fun upperEvenLetters(message: String): String {
+    return buildString {
+        for (i in message.indices) {
+            if (i % 2 == 0) {
+                append(message[i].uppercase())
+            }
+            else {
+                append(message[i])
+            }
+        }
+    }
+}
+
+________________________________________________________________________________________________________________________________________________________________________________________________
+Given a string.
+For each character:
+If it's a vowel → append it as is.
+If it's a lowercase consonant → append it in uppercase.
+Otherwise → discard it.
+Return the resulting string.
+
+Example:
+Input: "THe mAtRIX HAs YOu"
+Output: "eMATIASOu"
+
+fun decodeMessage(encodedMessage: String): String {
+    return buildString {
+        for (ch in encodedMessage) {
+            when {
+                ch in "aeiouAEIOU" -> append(ch)
+                ch.isLowerCase() -> append(ch.uppercase())
+                else -> continue
+            }
+        }
+    }
+}
+
+________________________________________________________________________________________________________________________________________________________________________________________________
