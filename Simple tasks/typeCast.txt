@@ -1,0 +1,44 @@
+Write a function that takes a list of mixed objects and returns a new list containing only the elements that are String type.
+
+Example:
+Input: ["apple", 1, "banana", 2, "orange"]
+Output: ["apple", "banana", "orange"]
+
+fun <T> getStringsOnly(list: List<T>): List<String> {
+    val result = mutableListOf<String>()
+    for (item in list) {
+        if (item is String) {
+            result.add(item)
+        }
+    }
+    return result
+}
+
+______________________________________________________________________________________________________________________________________________________________________________________________________
+
+Write a function that:
+Takes a list of objects (List<Any>).
+Counts how many items are String type.
+Uses is or !is operators for type checking.
+Skips non-string items.
+Return:Int — number of strings in the list.
+
+fun countStrings(list: List<Any>): Int {
+    val objects = list.filter { it is String }
+    return objects.count()
+}
+
+-------------------------------------------------------------
+
+fun countStrings(list: List<Any>): Int {
+    var numOfStrings = 0
+    for (item in list) {
+        if (item is String) {
+            numOfStrings++
+        }
+    }
+    return numOfStrings
+}
+
+______________________________________________________________________________________________________________________________________________________________________________________________________
+

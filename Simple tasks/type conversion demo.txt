@@ -1,0 +1,16 @@
+The program below demonstrates the functions discussed above. It reads a string representation of a number, converts it to several other types, and then prints the results of all conversions.
+
+fun main() {
+    val something = readln()
+
+    val d = something.toDouble()
+    val f = d.toFloat()
+    val i = f.toInt()
+    val b = i.toByte()
+
+    println(d)
+    println(f)
+    println(i)
+    println(b)
+    println(something.toBoolean())
+}

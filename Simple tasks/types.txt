@@ -1,0 +1,35 @@
+Write a function getLength that:
+Takes a nullable String?.
+Returns its length if not null.
+Returns -1 if null.
+
+Example:
+"Kotlin" → 6
+null → -1
+
+fun getLength(input: String?): Int {
+    return input?.length ?: -1
+} 
+
+________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Write a function reverse that:
+Takes a nullable Int?.
+Returns the reversed number (e.g., 654 → 456).
+Returns -1 if the input is null.
+
+fun reverse(input: Int?): Int {
+    return input?.toString()?.reversed()?.toIntOrNull() ?: -1
+}
+
+-------------------------------------------------------------------------------------------------
+
+fun reverse(input: Int?): Int {
+    val inputStr = input.toString()				//convert to use reversed()
+    val reversedInputStr = inputStr.reversed()			//reverse
+    val convertedToInt = reversedInputStr.toIntOrNull()		//convert to IntOrNull  
+    return convertedToInt ?: -1					// get reversed input or -1
+}
+
+
+_______________________________________________________________________________________________________________________________________________________________________________________________________
