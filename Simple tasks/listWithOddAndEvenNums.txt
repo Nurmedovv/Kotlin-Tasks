@@ -1,0 +1,61 @@
+Transforming a list of integers through odd or even check
+You are given a list of positive integers. Your task is to create a program that loops over the list and checks each number. If the number is odd, multiply it by 2, if it's even, divide it by 2. Print the transformed list as output. The input will be a string representation of a list of comma-separated integers, and the output should be a string representation of the transformed list of comma-separated integers.
+
+Sample Input 1:
+1,2,3,4,5
+Sample Output 1:
+2,1,6,2,10
+
+Sample Input 2:
+6,7,8,9,10
+
+Sample Output 2:
+3,14,4,18,5
+
+
+import java.util.*
+
+fun transformList(numbersString: String): String {
+    val numbers = numbersString.split(",").map { it.trim().toInt() }
+
+    return numbers.joinToString(",") {
+        if (it % 2 == 0) (it / 2).toString() else (it * 2).toString()
+    }
+}
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val numbersString = scanner.nextLine()
+
+    val transformedListString = transformList(numbersString)
+
+    println(transformedListString)
+}
+
+----------------------------------------------------------------------------------------------------------------------------
+
+import java.util.*
+
+fun transformList(numbersString: String): String {
+    val numbers = numbersString.split(",").map { it.toInt() }.toMutableList()
+    val newList = mutableListOf<Int>()
+    for (i in numbers) {
+        if (i % 2 == 0){
+            newList.add(i / 2)
+        } else
+            newList.add(i * 2)
+    }
+
+    return newList.joinToString(",")
+}
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val numbersString = scanner.nextLine()
+    val transformedListString = transformList(numbersString)
+
+    println(transformedListString)
+}
+
+
+_____________________________________________________________________________________________________________________________
