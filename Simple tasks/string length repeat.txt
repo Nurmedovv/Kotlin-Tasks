@@ -1,0 +1,35 @@
+Write a program that reads one word and prints it as many times as there are characters in it. Use string templates.
+Input: a single string.
+Output: a single string. Use the following template:
+
+"N repetitions of the word str: ..."
+
+where N is the number of letters in the entered word, str the inputs word, and instead of ... there should be word repetitions.
+
+Tip: Remember about repeat()!
+
+Sample Input 1:
+
+four
+Explain code
+Sample Output 1:
+
+4 repetitions of the word four: fourfourfourfour
+Explain code
+Sample Input 2:
+
+seasons
+Explain code
+Sample Output 2:
+
+7 repetitions of the word seasons: seasonsseasonsseasonsseasonsseasonsseasonsseasons
+____________________________________________________________________________________________________________________________________
+
+import java.util.Scanner
+
+fun main() {
+    val str = readln()
+    val n = str.length()
+    
+    println("$n repetitions of the word $str: ${str.repeat(n)}")
+}
