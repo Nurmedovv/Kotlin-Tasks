@@ -1,0 +1,27 @@
+Write a function that takes a CharSequence (string) and returns true if it reads the same forward and backward (palindrome), otherwise false.
+
+Example:
+"racecar" → true
+"sky" → false
+
+
+fun isPalindrome(str: CharSequence): Boolean {
+    return if ("$str" == "${str.reversed()}") true else false
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+fun isPalindrome(str: CharSequence): Boolean {
+    val word = "$str"
+    val reversed = word.reversed()
+    var isPalindrome = false
+
+    return if (word == reversed) {
+        isPalindrome = true
+        true
+    } else {
+        return false
+    }
+}
+
+_______________________________________________________________________________________________________________________________________________

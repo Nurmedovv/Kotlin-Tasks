@@ -1,0 +1,8 @@
+fun main() {
+    val word: String = readln()
+    val firstLetter = word.first()
+    val lastLetter = word.last()
+    val root = word.substring(1, word.lastIndex)
+
+    println("$lastLetter$root$firstLetter")
+}
