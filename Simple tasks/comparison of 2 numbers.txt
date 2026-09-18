@@ -1,0 +1,65 @@
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val reader = Scanner(System.`in`)
+    
+   	val num1 = reader.nextInt()
+    val num2 = reader.nextInt()
+    
+	if (num1 > num2){
+        print("greater")
+    } else if (num1 == num2) {
+        print("equal")
+    } else {
+    	print("less")
+	}
+}
+
+________________________________________________________________________________________________________________________________________
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val reader = Scanner(System.`in`)
+    
+   	val a = reader.nextInt()
+    val b = reader.nextInt()
+    
+    println(
+    	when {
+            a == b -> "equal"
+            a > b -> "greater"
+            else -> "less"
+        }
+    )
+}
+
+_________________________________________________________________________________________________________________________________________
+
+fun main() {
+    val (a, b) = Array(2) { readln().toInt() }
+    println(
+        when {
+            a < b -> "less"
+            a == b -> "equal"
+            else -> "greater"
+        }
+    )
+}
+______________________________________________________________________________________________________________________________
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+
+    val num1 = scanner.nextInt()
+    val num2 = scanner.nextInt()
+
+    println(
+        when {
+            num1 < num2 -> "<"
+            num1 > num2 -> ">"
+            else -> "="
+        }
+    )
+}

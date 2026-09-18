@@ -1,0 +1,28 @@
+Sequence
+Write a program that reads three characters and checks if they are ordered according to the Unicode table, and if each next character immediately follows the previous one (i.e. 'a', 'b', 'c' or 'x', 'y', 'z') according to the alphabet.
+
+The program must print either true or false.
+Sample Input 1:
+a
+b
+c
+
+Sample Output 1:
+true
+
+fun main(args: Array<String>) {
+    val a = readln().first()
+    val b = readln().first()
+    val c = readln().first()
+
+    val inConseq = (a + 1) == b && (b + 1) == c \\проверяет, действительно ли некст символ больше ровно на 1 единицуы
+
+    println(inConseq)
+}
+ 
+______________________________________________________________________________________________________________________________________
+
+fun main() {
+    val (char1, char2, char3) = List(3) { readln().first() }
+    println(char1 + 1 == char2 && char2 + 1 == char3)
+}
