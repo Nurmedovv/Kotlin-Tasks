@@ -1,0 +1,88 @@
+Write a program that reads a number, cuts off its fractional part, and prints the integer part of the input number as the result.
+Use Double as the input type and Long as the result type (values may be quite large).
+Input: single number of type Double.
+Output: single number of type Long.
+
+Sample Input 1:
+5.44
+
+Sample Output 1:
+5
+
+
+fun main() = print(readln().toDouble().toLong())
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Write a program that takes two large numbers as input, converts them to Long, and prints the result of their summation.
+Input: two long numbers as strings (each starting on new line).
+Output: Long value.
+
+Sample Input 1:
+1000000000000000
+2222222222222222
+
+Sample Output 1:
+3222222222222222
+
+
+fun main() {
+    val line1 = readln().toLong()
+    val line2 = readln().toLong()
+    val sum = line1 + line2
+
+    println(sum)
+
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+fun main () = println(readln().toLong() + readln().toLong())
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Let's write a lie detector program! The program should take a string as an input, convert it to a boolean value, and print it as the result.
+Input: String.
+Output: Boolean value.
+
+Sample Input 1:
+0
+Sample Output 1:
+false
+
+Sample Input 2:
+tRUe
+Sample Output 2:
+true
+
+fun main() {
+    val input = readln()
+    val bylean = input.toBoolean()
+
+    println(bylean)
+}
+
+__________________________________________________________________________________________________________________________________________________________________________________
+
+Write a function that takes a List<Any> and returns a new List<Any> where:
+Every Int element is multiplied by 2.
+All other elements stay unchanged.
+Use is / !is operators to check types.
+
+Example:
+[1, "hello", 3, true] → [2, "hello", 6, true]
+
+
+
+fun multiplyInts(list: List<Any>): List<Any> {
+    val result = mutableListOf<Any>()
+    for (item in list) {
+        when (item) {
+            is Int -> result.add(item * 2)
+            !is Int -> result.add(item)
+        }
+    }
+    return result
+}
+
+
+__________________________________________________________________________________________________________________________________________________________________________________
