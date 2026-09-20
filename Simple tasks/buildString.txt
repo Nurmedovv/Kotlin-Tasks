@@ -1,0 +1,87 @@
+Implement a function that takes a String message as an argument. The method transforms all the letters having an even index to uppercase (index 0 is considered even) and returns the result.
+It's guaranteed that input strings will not be empty.
+Sample Input 1:
+I love big letters
+
+Sample Output 1:
+I LoVe bIg lEtTeRs
+
+
+fun upperEvenLetters(message: String): String {
+    return buildString {
+        for (i in message.indices) {
+            if (i % 2 == 0) {
+                append(message[i].uppercase())
+            }
+            else {
+                append(message[i])
+            }
+        }
+    }
+}
+
+________________________________________________________________________________________________________________________________________________________________________________________________
+Given a string.
+For each character:
+If it's a vowel → append it as is.
+If it's a lowercase consonant → append it in uppercase.
+Otherwise → discard it.
+Return the resulting string.
+
+Example:
+Input: "THe mAtRIX HAs YOu"
+Output: "eMATIASOu"
+
+fun decodeMessage(encodedMessage: String): String {
+    return buildString {
+        for (ch in encodedMessage) {
+            when {
+                ch in "aeiouAEIOU" -> append(ch)
+                ch.isLowerCase() -> append(ch.uppercase())
+                else -> continue
+            }
+        }
+    }
+}
+
+________________________________________________________________________________________________________________________________________________________________________________________________
+
+Given a sentence (string).
+Return a new string with the words in reverse order.
+Use efficient string manipulation (StringBuilder or buildString is recommended).
+
+Example:
+Input: "Hello world! Kotlin is awesome"
+Output: "awesome is Kotlin world! Hello"
+
+
+fun reverseSentence(sentence: String): String {
+    val words = sentence.split(" ").reversed().joinToString(" ")
+    return words
+}
+
+_________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+Write a function that takes a CharSequence and returns a new CharSequence with every other character removed (keeps characters at even indices: 0, 2, 4, ...).
+
+Example:
+"Hello, world!" → "Hlo ol!"
+
+
+fun removeEveryOtherChar(input: CharSequence): CharSequence {
+    val sb = buildString {
+        for (i in input.indices) {
+            if (i % 2 == 0) append(input[i])
+        }
+    }
+    return sb
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+fun removeEveryOtherChar(input: CharSequence): CharSequence {
+    return input.filterIndexed { i, _ -> i % 2 == 0  }          // оставляем только символы с чётным индексом ("_" 2 параметр игнорируется)
+}
+
+_________________________________________________________________________________________________________________________________________________________________________________________________
