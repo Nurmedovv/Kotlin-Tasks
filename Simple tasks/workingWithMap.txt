@@ -1,0 +1,9 @@
+Brief description:
+Given a wish list (Map<String, Int> — item name to price) and a limit.
+Return a MutableMap containing only the items whose price is ≤ limit.
+
+
+fun makeMyWishList(wishList: Map<String, Int>, limit: Int): MutableMap<String, Int> {
+    return wishList.filter { it.value <= limit }.toMutableMap()
+}
+

@@ -1,0 +1,5 @@
+val move = mapOf(1 to "move up", 2 to "move down", 3 to "move left", 4 to "move right", 0 to "do not move")
+
+fun main() {
+    println( move[readln().toInt()] ?: "error!")
+}
