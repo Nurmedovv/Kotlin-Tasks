@@ -1,0 +1,66 @@
+Given a string of words separated by spaces.
+Find the first shortest word whose first letter is between 'a' and 'l'.
+If no such word exists, return null.
+
+Example
+Input: parrot ram rat pig cat frog wolf dog monkey fox
+Output: cat
+
+fun main() {
+    val words = readln().split(" ")
+    val result = words
+        .filter { it.first() in 'a'..'l' }		\\filter words by letters in 'a'..'z'
+        .minByOrNull { it.length }			\\minByOrNull - the shortest word with that letter
+    println(result)
+}
+
+--------------------------------------------------------------------------------------------------------------
+
+fun main() {
+    println(readln().split(" ").filter { it.first() in 'a'..'l' }.minByOrNull { it.length })
+}
+
+_______________________________________________________________________________________________________________________________________________________________________________________________________
+
+Given a string with numbers and words separated by spaces.
+Extract only the numeric values, convert them to Int, and return the maximum number.
+If no numbers exist, return null.
+
+Example:
+Input: "12 4.00 Kraken pull push 43 12345 cat power"
+Output: 12345
+
+fun main() {
+    val input = readln().split(" ")
+    val numbers = mutableListOf<Int>()
+    for (ch in input) {
+        val num = ch.toIntOrNull()		\\convert ch to Int if it's possible or to null if it's not
+        if (num != null) {			\\if num is not null
+            numbers.add(num)			\\add to numbers
+        }
+    }
+    println(numbers.maxOrNull())		\\prints the max element of the mutable list
+}
+
+______________________________________________________________________________________________________________________________________________________________________________________________________
+
+Write a function that takes a List<Any> and returns a List<String>.
+If an element is a String, keep it.
+If it's not a String, replace it with "N/A".
+Use safe casting (as?).
+
+Example:
+["hello", "world", 3, true] → ["hello", "world", "N/A", "N/A"]
+
+
+fun convertToStringList(list: List<Any>): List<String> {
+    val stringList = mutableListOf<String>()
+    for (element in list) {
+        val stringElement = element as? String ?: "N/A"
+        stringList.add(stringElement)
+    }
+    return stringList
+}
+
+______________________________________________________________________________________________________________________________________________________________________________________________________
+
