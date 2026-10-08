@@ -1,0 +1,23 @@
+Программа должна найти количество уникальных букв в слове. 
+Уникальной считается та буква, которая встречается в тексте ровно один раз.
+Пример:
+Вход: abracadabra
+Буквы c и d встречаются по одному разу.
+Выход: 2
+
+fun main() {
+    val word = readln()
+    val grouped = word.groupBy{ it }
+    val uniqe = grouped.count { it.value.size == 1}
+
+    println(uniqe)
+}
+
+-------------------------------------------------------------------------------------------------------------------
+
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    println(scanner.next().toList().groupBy { it }.filterValues { it.size == 1 }.size)
+}
