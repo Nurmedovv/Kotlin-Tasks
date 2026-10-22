@@ -1,0 +1,19 @@
+Read two lines: a list of numbers separated by spaces, and a single integer index.
+Return the element from the list at that index, or null if the index is out of bounds.
+
+Example:
+Input: "12 34 56" and 1 → Output: 34
+Input: "12 34 56" and 5 → Output: null
+
+fun main() {
+    val str = readln()
+    val indexStr = readln()
+
+    val numbers = str.split(" ").map { it.toInt() }
+    val index = indexStr.toInt()
+
+    val result = numbers.getOrNull(index)
+    println(result)
+}
+
+____________________________________________________________________________________________________________________________________________________________________________
