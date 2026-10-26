@@ -1,0 +1,25 @@
+Каждый игровой ход программа получает 8 чисел — это высоты гор слева направо (индексы от 0 до 7).
+Твоя задача — определить, какая гора самая высокая, и вывести её индекс.
+После этого ход заканчивается, высота выбранной горы уменьшается, и цикл повторяется снова.
+Игра продолжается бесконечно, пока все горы не будут разрушены.
+
+import java.util.*
+import java.io.*
+
+
+fun main(args : Array<String>) {
+    val input = Scanner(System.`in`)
+    
+    
+    while (true) {
+        val heights = mutableListOf<Int> ()
+
+        for (i in 0 until 8) {
+            heights.add(input.nextInt())
+        }
+
+        val maxIndex = heights.indexOf(heights.maxOrNull())
+
+        println(maxIndex) 
+    }
+}
