@@ -1,0 +1,111 @@
+В задаче требовалось распределить овец по рангам (от 1 до 4) в зависимости от их веса.
+Суть условий:
+Чем меньше вес, тем ниже цифровой ранг. Границы рангов:
+Меньше 30 → 1
+От 30 до 50 → 2
+От 50 до 70 → 3
+70 и больше → 4
+
+fun calculateRank(weight: Int): Int {
+    return when (weight) {
+        in 0..29 -> 1
+        in 30..49 -> 2
+        in 50..69 -> 3
+        else -> 4
+    }
+}
+
+fun main() {
+    val weight = readln().toInt()
+
+    println(calculateRank(weight))
+}
+
+_________________________________________________________________________________________________________________________________________________
+
+декомпозиция кода: 
+
+fun main() {
+    var validationResult = false
+    var password: String
+    while (!validationResult) {
+        var password = readln()
+        validationResult = password.length > 4
+        if (!validationResult) {
+            println("Your password should be five or longer characters, please write a new password")
+        }
+    }
+    println("Good password")
+}
+
+
+на 
+
+
+fun validatePassword(password: String): Boolean {
+   return when {
+        password.length < 5 -> {
+            println("Your password should be five or longer characters, please write a new password")
+            false
+        } 
+        else -> {
+            println("Good password")
+            true
+        }
+    }
+
+}
+
+// do not change the code below
+fun main() {
+    var validationResult = false
+    while (!validationResult) {
+        val password = readln()
+        validationResult = validatePassword(password)
+    }
+}
+
+
+__________________________________________________________________________________________________________________________________
+
+В задаче требовалось реализовать сложную математическую функцию через декомпозицию (разделение) на мелкие подфункции.
+Суть условий:Сама функция (f(x)) ведет себя по-разному на трех числовых промежутках.
+Нужно было создать три отдельные функции для каждого случая:
+f1 — считает (x^2 + 1), если (x <= 0\).
+f2 — считает (1 / x^2), если (0 < x < 1).
+f3 — считает (x^2 - 1), если (x >= 1).
+В главной функции f(x) требовалось написать логику, которая проверяет значение (x) и вызывает правильную подфункцию.
+
+
+fun f(x: Double): Double {
+    return when {
+        x <= 0 -> f1(x)
+        0 < x && x < 1 -> f2(x)
+        else -> f3(x)
+    }
+}
+
+// implement your functions here
+fun f1  (x: Double): Double {
+        return (x * x) + 1
+}
+
+fun f2 (x: Double): Double{ 
+        return 1 / (x * x)
+}
+
+fun f3 (x: Double): Double {
+        return (x * x) - 1
+}
+
+
+_________________________________________________________________________________________________________________________________________
+
+Условие задачи состоит из четырех четких требований:
+Создать функцию с именем getVolume.
+Принять 3 целых числа (Int): длину, ширину и высоту.
+Задать значение 1 по умолчанию для ширины (2-й параметр) и высоты (3-й параметр).
+Вернуть объем прямоугольного параллелепипеда (произведение этих трех чисел).
+
+
+fun getVolume( length: Int, width: Int = 1, height: Int = 1 ): Int = length * width * height
